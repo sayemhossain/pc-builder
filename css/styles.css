@@ -1,34 +1,38 @@
 /* -------------------------google font ------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 /* --------------------------Common Utilities ---------------------------*/
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ---------------------Customization section -------------------------- */
-.margin-top{
-    margin-top: 40px;
+.margin-top {
+  margin-top: 40px;
 }
-.bold{
-    font-weight: 700;
-}
-
-.reduce-margin{
-    margin-top: -5px;
+.bold {
+  font-weight: 700;
 }
 
-.bold-line{
-    border: 3px solid blue;
-    border-radius: 5px;
+.reduce-margin {
+  margin-top: -5px;
 }
 
-.button-style{
-    border-radius: 6px;
-    padding: 7px;
+.bold-line {
+  border: 3px solid blue;
+  border-radius: 5px;
 }
-.button-style:hover{
-    background-color: cornflowerblue;
-    color: white;
+#applied-text,
+#not-match {
+  display: none;
+}
+
+.button-style {
+  border-radius: 6px;
+  padding: 7px;
+}
+.button-style:hover {
+  background-color: cornflowerblue;
+  color: white;
 }
 /* --------------------End---------------------- */

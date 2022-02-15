@@ -2,15 +2,19 @@
 function getTotalPrice() {
   const memoryCost = document.getElementById("memory-cost");
   const bestPrice = document.getElementById("best-price");
-  const totalPrice = document.getElementById("total-price");
+  const totalPriceInput = document.getElementById("total-price");
   const storageCost = document.getElementById("storage-cost");
   const deliveryCost = document.getElementById("delivery-cost");
 
-  totalPrice.innerText =
+  const totalPrice =
     parseFloat(memoryCost.innerText) +
     parseFloat(bestPrice.innerText) +
     parseFloat(storageCost.innerText) +
     parseFloat(deliveryCost.innerText);
+  totalPriceInput.innerText = totalPrice;
+
+  const usePromoCode = totalPrice - totalPrice / 10;
+  return usePromoCode;
 }
 // this is common function for memory cost
 function totalMemoryCost(checkMemory) {
@@ -68,9 +72,32 @@ document.getElementById("paid-delivery").addEventListener("click", function () {
   getTotalPrice();
 });
 
+// this is for reset all price and remove promo code message
 document.getElementById("reset-btn").addEventListener("click", function () {
   document.getElementById("memory-cost").innerText = 0;
-  document.getElementById("total-price").innerText = 0;
+  document.getElementById("total-price").innerText = 1299;
   document.getElementById("storage-cost").innerText = 0;
   document.getElementById("delivery-cost").innerText = 0;
+  document.getElementById("not-match").style.display = "none";
+  document.getElementById("applied-text").style.display = "none";
+});
+// verifying promo code
+function matchPromoCode() {
+  const promoCodeFeild = document.getElementById("promo-input");
+  const inputPromoCode = parseInt(promoCodeFeild.value);
+  if (inputPromoCode == 1251) {
+    const usePromoCode = getTotalPrice();
+    document.getElementById("total-price").innerText = usePromoCode;
+    document.getElementById("applied-text").style.display = "block";
+    document.getElementById("not-match").style.display = "none";
+    promoCodeFeild.value = "";
+  } else {
+    document.getElementById("not-match").style.display = "block";
+    document.getElementById("applied-text").style.display = "none";
+    promoCodeFeild.value = "";
+  }
+}
+// apply promo code
+document.getElementById("apply-btn").addEventListener("click", function () {
+  matchPromoCode();
 });
