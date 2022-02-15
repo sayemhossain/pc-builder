@@ -66,7 +66,7 @@ document.getElementById("free-delivery").addEventListener("click", function () {
   getDeliveryCost(0);
   getTotalPrice();
 });
-// this is paid delivery
+// this is for paid delivery
 document.getElementById("paid-delivery").addEventListener("click", function () {
   getDeliveryCost(20);
   getTotalPrice();
