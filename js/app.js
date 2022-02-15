@@ -67,3 +67,10 @@ document.getElementById("paid-delivery").addEventListener("click", function () {
   getDeliveryCost(20);
   getTotalPrice();
 });
+
+document.getElementById("reset-btn").addEventListener("click", function () {
+  document.getElementById("memory-cost").innerText = 0;
+  document.getElementById("total-price").innerText = 0;
+  document.getElementById("storage-cost").innerText = 0;
+  document.getElementById("delivery-cost").innerText = 0;
+});
