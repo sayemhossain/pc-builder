@@ -32,20 +32,38 @@ document.getElementById("sixteenGB").addEventListener("click", function () {
   totalMemoryCost(false);
 });
 
+// this is common function for stroge cost
 function totalStorageCost(price) {
   const storageCostInput = document.getElementById("storage-cost");
   storageCostInput.innerText = price;
 }
-
+// this is for 256GB
 document.getElementById("ssd1").addEventListener("click", function () {
   totalStorageCost(500);
   getTotalPrice();
 });
+// this is for 512GB
 document.getElementById("ssd2").addEventListener("click", function () {
   totalStorageCost(700);
   getTotalPrice();
 });
+// this is for 1TB
 document.getElementById("ssd3").addEventListener("click", function () {
   totalStorageCost(900);
+  getTotalPrice();
+});
+// this code is for total delivery cost
+function getDeliveryCost(cost) {
+  const deliveryCost = document.getElementById("delivery-cost");
+  deliveryCost.innerText = cost;
+}
+// this is for free delivery
+document.getElementById("free-delivery").addEventListener("click", function () {
+  getDeliveryCost(0);
+  getTotalPrice();
+});
+// this is paid delivery
+document.getElementById("paid-delivery").addEventListener("click", function () {
+  getDeliveryCost(20);
   getTotalPrice();
 });
